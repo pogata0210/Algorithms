@@ -3,9 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
-
+    enough = []
+    for key in recipe:
+        if ingredients.get(key) is not None:
+            enough.append(ingredients[key]//recipe[key])
+        else:
+            enough.append(0)
+    return min(enough)
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
   # your implementation with different inputs
